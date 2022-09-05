@@ -7,12 +7,13 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 // Recupero l'elemento pulsante dall'html
 const button = document.getElementById("newGame-btn");
 
+// Dichiaro un'array che conterrà la seguenza numerica random generata
+// per confrontarla successivamente con la sequenza immessa dall'utente
+const sequenceArrayNumber = [];
+
 // Aggiungo evento click al pulsante
 button.addEventListener("click", function () {
     const MAX_NUMBER = 5;
-    // Dichiaro un'array che conterrà la seguenza numerica random generata
-    // per confrontarla successivamente con la sequenza immessa dall'utente
-    const sequenceArrayNumber = [];
 
     // Al click del pulsante lo nascondo per visualizzare la serie di numeri da dover ricordare
     button.style.display = "none";
@@ -51,10 +52,35 @@ button.addEventListener("click", function () {
 // Recupero l'elemento pulsante "Invia" dall'html
 const inputUserButton = document.getElementById("numberValueUser-btn");
 // Aggiungo evento click al pulsante
-inputUserButton.addEventListener("click", function () {
+inputUserButton.addEventListener("click", userValueNumber);
+
+function userValueNumber() {
+
+    let numbersGuessed = 0;
+    const numberCorrect = [];
+
     // Condizione che mi assicura che il valore inserito è effettivamente un valore numerico
     if (!isNaN(numberValueUser.value)) {
+        numberValueUser.style.backgroundColor = "#fff";
         // Converto la sequenza numerica immessa dall'utente in array
         const arrayNumberUser = numberValueUser.value.split("");
+
+        // Verifico se i valori inseriti dall'utente corrispondono alla sequenza generata random
+        for (let i = 0; i < arrayNumberUser.length; i++) {
+
+            if (sequenceArrayNumber.includes(parseInt(arrayNumberUser[i]))) {
+                ++numbersGuessed;
+                if(!numberCorrect.includes(arrayNumberUser[i])){
+                    numberCorrect.push(arrayNumberUser[i]);
+                }
+            }
+        }
+
+        
+
+    } else {
+        numberValueUser.value = "";
+        numberValueUser.style.backgroundColor = "red";
+        userValueNumber;
     }
-});
+}

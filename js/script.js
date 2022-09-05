@@ -20,6 +20,16 @@ button.addEventListener("click", function () {
     // Recupero l'elemnto "areaNumber" che conterrà i numeri da mostrare
     const areaNumber = document.querySelector(".areaNumber");
 
+    // Recupero l'elemnto "numberValueUser" che permetterà di scrivere la sequenza numerica da parte dell'utente
+    const areaInputNumber = document.querySelector(".areaInputNumber");
+
+    // Imposto il timer per visualizzare i numeri per un max di 30 secondi
+    setTimeout(function(){
+        areaNumber.classList.add("disabled");
+        // Mostro a schermo l'area per inserire la stringa da tastiera
+        areaInputNumber.classList.remove("disabled");
+    }, 30 * 1000);
+
     // Creo 5 celle in cui verranno mostrati i numeri random
     for(let i = 0; i < MAX_NUMBER; i++){
 

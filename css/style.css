@@ -73,3 +73,26 @@ button:hover{
     font-size: 14rem;
     color: #333;
 }
+
+.disabled{
+    display: none !important;
+}
+
+.areaInputNumber{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.areaInputNumber label{
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+}
+
+#numberValueUser{
+    width: 60%;
+    font-size: 2rem;
+    text-align: center;
+}

@@ -17,18 +17,19 @@ button.addEventListener("click", function () {
     // Al click del pulsante lo nascondo per visualizzare la serie di numeri da dover ricordare
     button.style.display = "none";
 
-    // Recupero l'elemnto "areaNumber" che conterrà i numeri da mostrare
+    // Recupero l'elemento "areaNumber" che conterrà i numeri da mostrare
     const areaNumber = document.querySelector(".areaNumber");
 
-    // Recupero l'elemnto "numberValueUser" che permetterà di scrivere la sequenza numerica da parte dell'utente
+    // Recupero gli elementi "areaInputNumber" e "numberValueUser" che permetteranno di scrivere la sequenza numerica da parte dell'utente
     const areaInputNumber = document.querySelector(".areaInputNumber");
+    const numberValueUser = document.getElementById("numberValueUser");
 
     // Imposto il timer per visualizzare i numeri per un max di 30 secondi
     setTimeout(function(){
         areaNumber.classList.add("disabled");
         // Mostro a schermo l'area per inserire la stringa da tastiera
         areaInputNumber.classList.remove("disabled");
-    }, 30 * 1000);
+    }, 3 * 1000);
 
     // Creo 5 celle in cui verranno mostrati i numeri random
     for(let i = 0; i < MAX_NUMBER; i++){
@@ -44,6 +45,11 @@ button.addEventListener("click", function () {
         sequenceArrayNumber.push(valueNumber);
 
         areaNumber.append(cell);
+    }
+
+    // Condizione che mi assicura che il valore inserito è effettivamente un valore numerico
+    if(!isNaN(numberValueUser)){
+        
     }
 
 });

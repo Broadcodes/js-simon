@@ -4,6 +4,8 @@ Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i 
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 */
 
+const MAX_NUMBER = 5;
+
 // Recupero l'elemento pulsante dall'html
 const button = document.getElementById("newGame-btn");
 
@@ -13,7 +15,6 @@ const sequenceArrayNumber = [];
 
 // Aggiungo evento click al pulsante
 button.addEventListener("click", function () {
-    const MAX_NUMBER = 5;
 
     // Al click del pulsante lo nascondo per visualizzare la serie di numeri da dover ricordare
     button.style.display = "none";
@@ -58,9 +59,9 @@ function userValueNumber() {
 
     let numbersGuessed = 0;
     const numberCorrect = [];
-
+    
     // Condizione che mi assicura che il valore inserito è effettivamente un valore numerico
-    if (!isNaN(numberValueUser.value)) {
+    if (!isNaN(numberValueUser.value) && numberValueUser.value.length <= MAX_NUMBER) {
         numberValueUser.style.backgroundColor = "#fff";
         // Converto la sequenza numerica immessa dall'utente in array
         const arrayNumberUser = numberValueUser.value.split("");
@@ -86,6 +87,8 @@ function userValueNumber() {
         } else {
             elementResult.innerHTML = `Hai inserito ${numbersGuessed} numeri corretti: i numeri indovinati sono ${numberCorrect.join(" - ")}`;
         }
+
+        inputUserButton.disabled = true;
         result.append(elementResult);
 
     } else {

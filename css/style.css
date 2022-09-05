@@ -16,6 +16,7 @@ body {
 }
 
 h1{
+    font-family: 'Orbitron', sans-serif;
     padding: 40px;
     font-size: 4rem;
 }
@@ -99,4 +100,32 @@ button:hover{
 
 .result{
     width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .numberView p{
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1090px) {
+    .numberView p{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 965px) {
+    .numberView p{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 775px) {
+    .numberView p{
+        font-size: 0.8rem;
+    }
+
+    .instructionGame img{
+        width: 70px;
+    }
 }

@@ -76,7 +76,17 @@ function userValueNumber() {
             }
         }
 
-        
+        // Recupero l'elemento "result" dall'html
+        const result = document.querySelector(".result");
+        // Creo un nuovo elemento P per visualizzare il messaggio risultato
+        const elementResult = document.createElement("p");
+        // Visualizzo messaggio
+        if(numbersGuessed === 1){
+            elementResult.innerHTML = `Hai inserito ${numbersGuessed} numero corretto: il numero indovinato è ${numberCorrect}`;
+        } else {
+            elementResult.innerHTML = `Hai inserito ${numbersGuessed} numeri corretti: i numeri indovinati sono ${numberCorrect.join(" - ")}`;
+        }
+        result.append(elementResult);
 
     } else {
         numberValueUser.value = "";

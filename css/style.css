@@ -60,6 +60,7 @@ button:hover{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    padding-top: 40px;
 }
 
 .cell{

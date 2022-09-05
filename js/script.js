@@ -25,14 +25,14 @@ button.addEventListener("click", function () {
     const numberValueUser = document.getElementById("numberValueUser");
 
     // Imposto il timer per visualizzare i numeri per un max di 30 secondi
-    setTimeout(function(){
+    setTimeout(function () {
         areaNumber.classList.add("disabled");
         // Mostro a schermo l'area per inserire la stringa da tastiera
         areaInputNumber.classList.remove("disabled");
     }, 3 * 1000);
 
     // Creo 5 celle in cui verranno mostrati i numeri random
-    for(let i = 0; i < MAX_NUMBER; i++){
+    for (let i = 0; i < MAX_NUMBER; i++) {
 
         // Genero un valore random da mostrare nella cella
         let valueNumber = Math.floor(Math.random() * 10);
@@ -46,10 +46,15 @@ button.addEventListener("click", function () {
 
         areaNumber.append(cell);
     }
+});
 
+// Recupero l'elemento pulsante "Invia" dall'html
+const inputUserButton = document.getElementById("numberValueUser-btn");
+// Aggiungo evento click al pulsante
+inputUserButton.addEventListener("click", function () {
     // Condizione che mi assicura che il valore inserito è effettivamente un valore numerico
-    if(!isNaN(numberValueUser)){
-        
+    if (!isNaN(numberValueUser.value)) {
+        // Converto la sequenza numerica immessa dall'utente in array
+        const arrayNumberUser = numberValueUser.value.split("");
     }
-
 });

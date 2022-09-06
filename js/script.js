@@ -31,7 +31,7 @@ button.addEventListener("click", function () {
         areaNumber.classList.add("disabled");
         // Mostro a schermo l'area per inserire la stringa da tastiera
         areaInputNumber.classList.remove("disabled");
-    }, 3 * 1000);
+    }, 30 * 1000);
 
     // Creo 5 celle in cui verranno mostrati i numeri random
     for (let i = 0; i < MAX_NUMBER; i++) {

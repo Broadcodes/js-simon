@@ -112,11 +112,19 @@ button:hover{
     .numberView p{
         font-size: 1.3rem;
     }
+
+    .cell{
+        font-size: 10rem;
+    }
 }
 
 @media screen and (max-width: 965px) {
     .numberView p{
         font-size: 1rem;
+    }
+    
+    .cell{
+        font-size: 9rem;
     }
 }
 
@@ -127,5 +135,9 @@ button:hover{
 
     .instructionGame img{
         width: 70px;
+    }
+        
+    .cell{
+        font-size: 8rem;
     }
 }
